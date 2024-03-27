@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Learn Buddy</title>
+    <style>
+      /* Base styles */
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        min-height: 100vh; /* Set minimum height for full viewport */
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        width: 200px;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border-right: 1px solid #ddd;
+        position: fixed; /* Fix sidebar to the left */
+        top: 0;
+        bottom: 0;
+        z-index: auto; /* Set sidebar on top of content */
+      }
+      .sidebar a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        transition: 0.3s;
+      }
+      .sidebar a:hover {
+        background-color: #ddd;
+      }
+
+      /* Main content styles */
+      .main-content {
+        flex: 1;
+        padding: 20px;
+        margin-left: 20%;
+      }
+
+      /* Media query for responsive adjustments */
+      @media (max-width: 768px) {
+        .sidebar {
+          position: relative; /* Make sidebar responsive on small screens */
+          width: 100px;
+          height: auto;
+        }
+        .main-content {
+          padding-top: 60px; /* Adjust padding for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2 style="margin-left: 20px">Learner</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">My Profile</a>
+        <a href="#">My Courses</a>
+      </div>
+      <div class="main-content">
+        <h1>Welcome to your Dashboard!</h1>
+        <p>
+          This is the main content area of your dashboard. You can add charts,
+          graphs, tables, or any other relevant information here.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
