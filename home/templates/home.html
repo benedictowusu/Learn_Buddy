@@ -1,48 +1,32 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Learn Buddy</title>
-    <link
-      rel="stylesheet"
-      href="{% static 'styles.css' %}"
-    />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbarLogo">Learn Buddy</div>
-      <div class="navlink">
-        <ul>
-          <li>
-            <a
-              class="active"
-              href="#"
-              >Home</a
-            >
-          </li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </div>
-      <div class="sign"><a href="#">Sign in</a></div>
-    </nav>
-    <div class="hero">
-      <h2 class="welcome">Hello, What Do You Want To Learn?</h2>
-      <input
-        type="search"
-        placeholder="search"
-      />
-    </div>
-    <div>
-      <div>Read</div>
-      <div>Practice</div>
-      <div>Learn</div>
-    </div>
-  </body>
-</html>
+{% extends 'base.html' %} {% block navbar %}
+<nav class="navbar">
+  <div class="navbarLogo">Learn Buddy</div>
+  <div class="navlink">
+    <ul>
+      <li>
+        <a
+          class="active"
+          href="#"
+          >Home</a
+        >
+      </li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="sign"><a href="#">Sign in</a></div>
+</nav>
+<div class="hero">
+  <h2 class="welcome">Hello, What Do You Want To Learn?</h2>
+  <input
+    type="search"
+    placeholder="search"
+  />
+</div>
+<div>
+  <div>Read</div>
+  <div>Practice</div>
+  <div>Learn</div>
+</div>
+{% endblock %}
