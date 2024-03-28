@@ -1,40 +1,6 @@
 .navbar {
-  position: fixed;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  background-color: black;
-  color: white;
-  height: 50px;
-  top: 0;
-  left: 0;
-  margin-right: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  background-color: white;
 }
-.navlink li {
-  list-style: none;
-  display: inline-flex;
-  padding: 0 20px;
-}
-.navlink li a {
-  text-decoration: none;
-  font-size: 30px;
-  color: white;
-}
-.navbarLogo {
-  font-size: 30px;
-  margin-top: 10px;
-}
-.sign a {
-  text-decoration: none;
-  font-size: 30px;
-  color: white;
-}
-.hero {
-  color: black;
-  margin: 5% 30% 0 40%;
-}
-.content {
-  margin-top: 50%;
+.menuitem li {
+  list-style-type: none;
 }

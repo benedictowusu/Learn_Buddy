@@ -1,32 +1,27 @@
 {% extends 'base.html' %} {% block navbar %}
 <nav class="navbar">
-  <div class="navbarLogo">Learn Buddy</div>
-  <div class="navlink">
-    <ul>
-      <li>
-        <a
-          class="active"
-          href="#"
-          >Home</a
-        >
-      </li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Contact us</a></li>
+  <div>
+    <a href="#">Learn</a>
+  </div>
+  <div class="menu">
+    <ul class="menuitem">
+      <li><a href="#">Course</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </div>
-  <div class="sign"><a href="#">Sign in</a></div>
+  <div class="Sign">
+    <div>
+      <a href="#">Signup</a>
+    </div>
+    <div>
+      <a href="#">Sign in</a>
+    </div>
+  </div>
 </nav>
+{% endblock %} {% block hero %}
+
 <div class="hero">
-  <h2 class="welcome">Hello, What Do You Want To Learn?</h2>
-  <input
-    type="search"
-    placeholder="search"
-  />
-</div>
-<div>
-  <div>Read</div>
-  <div>Practice</div>
-  <div>Learn</div>
+  <p>Welcome to Learn Buddy</p>
 </div>
 {% endblock %}
