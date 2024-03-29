@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 # Create your views here.
 def signup_view(request):
@@ -21,7 +21,16 @@ def login_view(request):
             #login by retrieving user
             user = form.get_user()
             login(request, user)
-            return redirect('articles:list')
+            if 'next' in request.POST:
+                # redirect to requested page after login
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('articles:list')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('articles:list')
