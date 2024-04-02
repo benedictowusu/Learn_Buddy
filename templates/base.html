@@ -10,25 +10,36 @@
     <title>Document</title>
     <link
       rel="stylesheet"
-      href="{% static 'styles.css' %}"
+      href="{% static 'output.css' %}"
     />
   </head>
   <body>
-    <h1><a href="{% url 'articles:list' %}">Learn Buddy</a></h1>
-    <nav>
-      <ul>
-        <li>
-          <form
-            action="{% url 'accounts:logout' %}"
-            method="post"
+    <nav class="text-xl">
+      <div class="flex flex-row justify-around">
+        <a
+          class="ml-4 font-bold text-3xl text-blue-600 mt-3"
+          href="{% url 'articles:list' %}"
+          >LearnBuddy</a
+        >
+        <ul class="grid grid-cols-3 text-xl gap-4 font-bold mt-5">
+          <li class="nav-item"><a href="#">Courses</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+        </ul>
+        <div class="grid grid-cols-2 py-3 gap-4 mx-4 text-sm">
+          <a
+            class="bg-gray-400 lowercase py-2 px-4 font-bold rounded-full text-white"
+            href="#"
+            >Sign In</a
           >
-            {% csrf_token %%}
-            <button type="submit">Logout</button>
-          </form>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <hr />
     </nav>
-    <div>{% block content %} {% endblock content %}</div>
-    <script src="{% static 'script.js' %}"></script>
+    <div>
+      <h1>Unlock Your Potential. Explore a World of Knowledge</h1>
+      <h2>Quality educational resources for learners of all ages.</h2>
+      <button type="submit">Start Learning Now</button>
+    </div>
   </body>
 </html>
