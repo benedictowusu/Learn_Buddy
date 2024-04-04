@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Document</title>
+    <title>Home || Learn Buddy</title>
     <link
       rel="stylesheet"
       href="{% static 'output.css' %}"
@@ -27,13 +27,13 @@
         <div class="flex flex-row justify-around">
           <a
             class="ml-4 font-bold text-3xl text-blue-600 mt-3"
-            href="{% url 'articles:list' %}"
+            href="{% url 'homepage:hero' %}"
             >LearnBuddy</a
           >
           <ul class="grid grid-cols-3 text-xl gap-4 font-bold mt-5 text-white">
-            <li class="nav-item"><a href="#">Courses</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
-            <li class="nav-item"><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="{% url 'homepage:contact' %}">Contact</a></li>
+            <li><a href="#">About</a></li>
           </ul>
           <div class="grid grid-cols-2 py-3 gap-4 mx-4 text-sm">
             <a
@@ -50,121 +50,11 @@
         </div>
         <hr />
       </nav>
-      <div class="grid grid-cols-2 gap-4 pt-20 pl-10 text-white">
-        <div
-          class="ml-10"
-          style="font-family: Tahoma, Verdana, sans-serif"
-        >
-          <h1 class="text-3xl font-bold ml-10 mt-10">
-            Become a Highly Sought-After Software Engineer
-          </h1>
-          <h2 class="mt-10 ml-10 font-bold text-xl">
-            Learn the in-demand skills needed to land your <br />
-            dream job in the software industry
-          </h2>
-          <button class="mt-10 ml-10 bg-blue-600 font-bold p-4 rounded-full">
-            <a href="#">Get started (free)</a>
-          </button>
-        </div>
-        <div class="mt-10 ml-10">
-          <img
-            src="/static/giphy.gif"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="text-white mt-40 pt-20 pb-20 font-bold">
-        <h1 class="text-blue-600 ml-10 text-center">Hello,</h1>
-        <p class="text-3xl text-center">Welcome to Learn Buddy</p>
-      </div>
+      <div>{% block signup %}{% endblock %}</div>
+      <div>{% block login %}{% endblock %}</div>
+      <div>{% block Hero %} {% endblock %}</div>
+      <div>{% block contact %} {% endblock %}</div>
     </div>
-    <div
-      class="text-white text-center pt-20 font-bold"
-      style="background-color: black; font-size: 20px"
-    >
-      <p>
-        Welcome to the software engineering course! <br />
-        We're excited to guide you on your journey to becoming a skilled
-        developer. Whether <br />
-        you're a complete beginner or have some coding experience, this course
-        is designed to equip <br />
-        you with the knowledge and tools you need to build exceptional software.
-      </p>
-    </div>
-    <div class="pt-20">
-      <h1 class="text-center text-3xl font-bold">Why choose us?</h1>
-      <div class="flex flex-row justify-evenly mt-10">
-        <div>
-          <h1 class="text-center text-3xl font-bold pt-20">
-            Structured Learning & Expert Guidance
-          </h1>
-          <p class="text-center mt-6">
-            We offer a structured curriculum designed to take you from beginner
-            to proficient coder. <br />
-            Our experienced instructors provide clear explanations, practical
-            exercises, <br />
-            and ongoing support to ensure you grasp key concepts and build your
-            skills effectively.
-          </p>
-        </div>
-        <div>
-          <img
-            style="height: 310px"
-            src="/static/code 1.webp"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="flex flex-row justify-evenly mt-10">
-        <div>
-          <h1 class="text-center text-3xl font-bold pt-20">
-            Engaging & Practical Approach
-          </h1>
-          <p class="text-center mt-6">
-            Learning by doing is our motto. We go beyond theory, offering
-            interactive coding exercises, <br />
-            real-world project opportunities, and a collaborative learning
-            environment. You'll gain hands-on <br />
-            experience by building your own software applications, making the
-            learning process engaging and relevant.
-          </p>
-        </div>
-        <div>
-          <img
-            style="height: 310px"
-            src="/static/code 2.webp"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="flex flex-row justify-evenly mt-10">
-        <div>
-          <h1 class="text-center text-3xl font-bold pt-20">
-            Empowering You for Success
-          </h1>
-          <p class="text-center mt-6">
-            Our goal is not just to teach you to code, but to empower you for a
-            successful career in software engineering. <br />
-            We offer career guidance, help you build a strong portfolio to
-            showcase <br />
-            your skills, and prepare you for the challenges and opportunities
-            that lie ahead in the tech industry
-          </p>
-        </div>
-        <div>
-          <img
-            style="height: 310px"
-            src="/static/code 3.webp"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-    <!-- Prices -->
-    <div class="pt-20 mt-10">
-      <div>Price one</div>
-      <div>Price two</div>
-      <div>Price three</div>
-    </div>
+    <!-- Courses -->
   </body>
 </html>
