@@ -38,7 +38,8 @@
         transition: 0.3s;
       }
       .sidebar a:hover {
-        background-color: #ddd;
+        background-color: blue;
+        color: white;
       }
 
       /* Main content styles */
@@ -64,10 +65,26 @@
   <body>
     <div class="container">
       <div class="sidebar">
-        <h2 style="margin-left: 20px">Learner</h2>
+        <div>
+          <h1>{{ user }}</h1>
+        </div>
         <a href="#">Dashboard</a>
         <a href="#">My Profile</a>
         <a href="#">My Courses</a>
+        <div style="margin-top: 450px">
+          <form
+            action="{% url 'accounts:logout' %}"
+            method="post"
+          >
+            {% csrf_token %}
+            <button
+              style="border: none; cursor: pointer"
+              type="submit"
+            >
+              Sign out
+            </button>
+          </form>
+        </div>
       </div>
       <div class="main-content">
         <h1>Welcome to your Dashboard!</h1>

@@ -1,11 +1,16 @@
 {% extends 'base.html' %} {% block signup %}
-<h1>signup</h1>
-<form
-  class="signup"
-  action="{% url 'accounts:signup' %}"
-  method="post"
->
-  {% csrf_token %} {{ form }}
-  <button type="submit">Sign up</button>
-</form>
+<div style="width: 100%; height: 700px">
+  <div class="form-container">
+    <h1 class="text-3xl text-black">signup</h1>
+    <div>
+      <form
+        action="{% url 'accounts:signup' %}"
+        method="post"
+      >
+        {% csrf_token %} {{ form }}
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
