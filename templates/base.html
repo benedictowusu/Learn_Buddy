@@ -93,22 +93,58 @@
       "
     >
       <nav class="text-xl navbar">
-        <div style="display: flex; justify-content: space-between">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-content: baseline;
+          "
+        >
           <a
             class="ml-4 font-bold text-3xl text-blue-600 mt-3"
-            href="#"
+            href="{% url 'home:home' %}"
             >LearnBuddy</a
           >
           <div class="flex text-xl gap-4 mt-5 text-white">
             <a href="{% url 'articles:list' %}">Courses</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
-            <a
-              class="bg-blue-600 lowercase font-bold rounded-full text-white"
-              style="padding: 5px 15px; margin-right: 15px"
-              href="{% url 'accounts:login' %}"
-              >sign in</a
-            >
+            <a href="{% url 'home:contact'%}">Contact</a>
+            <a href="{% url 'home:about' %}">About</a>
+            {% if user.is_authenticated %}
+            <div>
+              <form
+                action="{% url 'accounts:logout' %}"
+                method="post"
+              >
+                {% csrf_token %}
+                <button
+                  class="lowercase font-bold rounded text-white"
+                  style="
+                    padding: 5px 15px;
+                    margin-right: 15px;
+                    margin-top: -10px;
+                    border: 2px solid;
+                  "
+                  type="submit"
+                >
+                  Sign out
+                </button>
+              </form>
+            </div>
+            {% else %}
+            <div>
+              <a
+                class="lowercase font-bold rounded text-white"
+                style="
+                  padding: 5px 15px;
+                  margin-right: 15px;
+                  margin-top: -10px;
+                  border: 2px solid;
+                "
+                href="{% url 'accounts:login' %}"
+                >sign in</a
+              >
+            </div>
+            {% endif %}
           </div>
         </div>
       </nav>
