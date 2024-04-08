@@ -13,6 +13,9 @@
       href="{% static 'output.css' %}"
     />
     <style>
+      .navbar {
+        height: 20px;
+      }
       .helptext {
         display: none;
       }
@@ -37,6 +40,46 @@
         margin-bottom: 5px;
         font-weight: bold;
       }
+      .card {
+        background-color: #404040;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 300px; /* Adjust width as needed */
+      }
+
+      .card-image {
+        width: 100%;
+        height: 200px; /* Adjust height as needed */
+        background-color: #ddd; /* Placeholder color for image area */
+      }
+      .img-size {
+        height: 200px;
+        width: 400px;
+      }
+      .card-content {
+        padding: 15px;
+        flex-grow: 1; /* Allows content area to fill remaining space */
+      }
+      .card-content p {
+        margin-top: 20px;
+      }
+      .card-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .card-actions a,
+      .card-actions button {
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body style="background-color: black; color: white">
@@ -49,38 +92,34 @@
         height: 790px;
       "
     >
-      <nav class="text-xl">
-        <div class="flex flex-row justify-around">
+      <nav class="text-xl navbar">
+        <div style="display: flex; justify-content: space-between">
           <a
             class="ml-4 font-bold text-3xl text-blue-600 mt-3"
             href="#"
             >LearnBuddy</a
           >
-          <div class="grid grid-cols-3 text-xl gap-4 font-bold mt-5 text-white">
-            <a href="#">Courses</a>
+          <div class="flex text-xl gap-4 mt-5 text-white">
+            <a href="{% url 'articles:list' %}">Courses</a>
             <a href="#">Contact</a>
             <a href="#">About</a>
-          </div>
-
-          <div class="grid grid-cols-2 py-3 gap-4 mx-4 text-sm">
             <a
-              class="bg-gray-400 lowercase py-2 px-4 font-bold rounded-full text-white"
+              class="bg-blue-600 lowercase font-bold rounded-full text-white"
+              style="padding: 5px 15px; margin-right: 15px"
               href="{% url 'accounts:login' %}"
-              >Sign In</a
-            >
-            <a
-              class="bg-blue-600 lowercase py-2 px-4 font-bold rounded-full text-white"
-              href="{% url 'accounts:signup' %}"
-              >Sign up</a
+              >sign in</a
             >
           </div>
         </div>
-        <hr />
       </nav>
       <div>{% block signup %}{% endblock %}</div>
       <div>{% block login %}{% endblock %}</div>
       <div>{% block Hero %} {% endblock %}</div>
       <div>{% block contact %} {% endblock %}</div>
+      <div>{% block about %} {% endblock %}</div>
+      <div>{% block search %} {% endblock %}</div>
+      <div>{% block courses %} {% endblock %}</div>
+      <div>{% block content %} {% endblock %}</div>
     </div>
     <!-- Courses -->
   </body>

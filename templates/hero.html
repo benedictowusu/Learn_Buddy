@@ -1,21 +1,25 @@
 {% extends 'base.html' %} {% block Hero %}
-<div class="grid grid-cols-2 gap-4 pt-20 pl-10 text-white">
-  <div
-    class="ml-10"
-    style="font-family: Tahoma, Verdana, sans-serif"
-  >
-    <h1 class="text-3xl font-bold ml-10 mt-10">
-      Become a Highly Sought-After Software Engineer
+<div
+  class="pt-20 pl-10 text-white"
+  style="display: flex; justify-content: space-between"
+>
+  <div style="font-family: Tahoma, Verdana, sans-serif">
+    <h1 class="text-3xl font-bold mt-10">
+      Become a Highly Sought-After <br />
+      Software Engineer
     </h1>
-    <h2 class="mt-10 ml-10 font-bold text-xl">
+    <h2 class="mt-10 font-bold text-xl">
       Learn the in-demand skills needed to land your <br />
       dream job in the software industry
     </h2>
-    <button class="mt-10 ml-10 bg-blue-600 font-bold p-4 rounded-full">
-      <a href="#">Get started (free)</a>
+    <button class="mt-10 bg-blue-600 font-bold p-4 rounded-full">
+      <a href="{% url 'accounts:signup' %}">Get started (free)</a>
     </button>
   </div>
-  <div class="mt-10 ml-10">
+  <div
+    class="mt-10"
+    style="margin-right: 30px"
+  >
     <img
       src="/static/giphy.gif"
       alt=""

@@ -4,10 +4,10 @@ from .models import Article
 from . import forms
 
 def articles(request):
-    articles = Article.objects.all().order_by('date')
+    articles = Article.objects.all()
     return render(request, 'articles.html', {'articles': articles})
 
-
+@login_required
 def article_detail(request, slug):
     article = Article.objects.get(slug=slug)
     return render(request, 'details.html', {'article': article})
