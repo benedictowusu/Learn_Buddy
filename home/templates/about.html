@@ -1,3 +1,48 @@
 {% extends 'base.html' %}{% block about %}
-<h1>This is about us</h1>
+<center>
+  <main>
+    <h2>Unlock Your Software Engineering Potential</h2>
+    <p>
+      Welcome to our comprehensive software engineering course, designed to
+      equip you with the skills and knowledge to thrive in this exciting field.
+      Whether you're a complete beginner or have some programming experience,
+      our program caters to all levels.
+    </p>
+    <section class="about-sections">
+      <div>
+        <h3>Master the Fundamentals</h3>
+        <p>
+          Learn the essential building blocks of software development, including
+          programming languages, algorithms, data structures, and software
+          design principles.
+        </p>
+      </div>
+      <div>
+        <h3>Hands-on Learning</h3>
+        <p>
+          Get practical experience through real-world coding projects and
+          exercises. Apply your theoretical knowledge to solve problems and
+          build your portfolio.
+        </p>
+      </div>
+      <div>
+        <h3>Expert Instructors</h3>
+        <p>
+          Our experienced instructors are passionate about software engineering
+          and committed to your success. They provide personalized guidance and
+          mentorship throughout the course.
+        </p>
+      </div>
+    </section>
+    <p>By the end of this course, you'll be able to:</p>
+    <ul>
+      <li>Write clean and efficient code.</li>
+      <li>Design and develop software applications.</li>
+      <li>Troubleshoot and debug software issues.</li>
+      <li>Collaborate effectively in a team environment.</li>
+      <li>Prepare for a career in software engineering.</li>
+    </ul>
+    <a href="{% url 'accounts:signup' %}">Enroll Now!</a>
+  </main>
+</center>
 {% endblock %}

@@ -1,49 +1,69 @@
 {% extends 'base.html' %} {% block courses %}
-
-<div>
-  <div class="text-center mt-10">
-    <h1 style="font-size: 50px; font-weight: bolder">
-      Impove your coding skills
-    </h1>
-    <p class="mt-10">
-      Whether you want to excel in web development, mobile development or
-      <br />
-      strengthen your fundamental software engineering skills, there is a course
-      for you.
-    </p>
-  </div>
-  <div style="width: fit-content">
-    <span
-      ><input
-        style="background-color: black"
-        type="text"
-        placeholder="search"
-    /></span>
-    <span><button type="submit">search</button></span>
-  </div>
-</div>
-<div class="mt-10 grid grid-cols-3 gap-4">
-  {% for article in articles %}
-  <a href="{% url 'articles:detail' slug=article.slug %}">
-    <div class="card">
-      <h1>{{ article.title}}</h1>
-      <div class="card-image">
-        <img
-          class="img-size"
-          src="{{ article.image.url }}"
-          alt=""
-        />
-      </div>
-      <div class="card-content">
-        <h3 class="text-center text-3xl"></h3>
-        <p class="card-description">{{ article.snippet }}</p>
-      </div>
-      <div class="card-actions">
-        <button>Start Course</button>
-        <h3>{{ article.category }}</h3>
-      </div>
+<center>
+  <div>
+    <div class="text-center mt-10">
+      <h1 style="font-size: 50px; font-weight: bolder">
+        Impove your coding skills
+      </h1>
+      <p class="mt-10">
+        Whether you want to excel in web development, mobile development or
+        <br />
+        strengthen your fundamental software engineering skills, there is a
+        course for you.
+      </p>
     </div>
-  </a>
-  {% endfor %}
-</div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      "
+    >
+      <form
+        action="{% url 'home:search' %}"
+        method="post"
+      >
+        {% csrf_token %}
+        <input
+          type="search"
+          name="search"
+          placeholder="search"
+        />
+        <button
+          style="border: solid"
+          type="submit"
+        >
+          search
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="mt-10 grid grid-cols-3 gap-4">
+    {% for article in articles %}
+    <a href="{% url 'articles:detail' slug=article.slug %}">
+      <div class="card">
+        <h1>{{ article.title}}</h1>
+        <div class="card-image">
+          <img
+            class="img-size"
+            src="{{ article.image.url }}"
+            alt=""
+          />
+        </div>
+        <div class="card-content">
+          <div>
+            <h3 class="text-center text-3xl"></h3>
+            <p class="card-description">{{ article.snippet }}</p>
+          </div>
+          <div class="card-actions">
+            <button>Start Course</button>
+            <h3>{{ article.category }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</center>
 {% endblock %}

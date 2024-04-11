@@ -12,9 +12,8 @@ class Article(models.Model):
     category = models.CharField(max_length = 50, choices = specialization.choices, default = 1)
     slug = models.SlugField(null= True)
     snippet = models.TextField(null=True, default=None)
-    description = models.TextField(null= True, default=None)
     image = models.ImageField(default=None, blank=True)
     url = EmbedVideoField(null=True, default=None)
  
     def __str__(self):
-        return self.title
+        return self.title + " " + " a " + self.category + " course "

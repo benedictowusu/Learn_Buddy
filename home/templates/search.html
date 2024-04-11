@@ -1,5 +1,15 @@
-{% extends 'base.html' %}{% block search %}
-<div>
-  <h1>Search page</h1>
+{% extends 'base.html' %} {% block search %}
+<div class="">
+  <center>
+    {% if searched %}
+    <h1>You seached for {{ searched }}</h1>
+    <div>
+      {% for searched in Articles %}
+      <div>{{ courses }}</div>
+      {% endfor %} {% else %}
+    </div>
+    <h1>You forgot to seach for a course</h1>
+    {% endif %}
+  </center>
 </div>
 {% endblock %}

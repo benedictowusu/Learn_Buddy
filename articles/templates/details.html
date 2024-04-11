@@ -1,7 +1,56 @@
 {% extends 'base.html' %} {% load embed_video_tags %} {% block content %}
+
+<div style="padding: 10px">
+  <h1 class="text-3xl font-bold text-center">
+    Welcome to the best {{article.title }} course
+  </h1>
+  <div class="flex">
+    <div class="mt-10">
+      <p>
+        Dear {{ user }} Our {{ article.title }} course is tailored just for you.
+        <br />
+        These are some things you will learn from our course
+      </p>
+      <ul class="mt-10">
+        <li>
+          1. Write clean, efficient, and maintainable {{ article.title }} code.
+        </li>
+        <li>2. Design, develop, and test software applications</li>
+        <li>3. Effectively troubleshoot and debug software issues</li>
+        <li>
+          4. Collaborate seamlessly in a team environment using industry best
+          practices.
+        </li>
+        <li>
+          5. Gain the knowledge and confidence to pursue a fulfilling career in
+          software engineering.
+        </li>
+      </ul>
+      <p class="mt-10">
+        Don't wait! Invest in your future and take the first step towards a
+        rewarding career in software engineering
+      </p>
+    </div>
+    <div style="margin-top: 4%;">
+      <center>
+        <img
+          class="img-size"
+          src="{{ article.image.url }}"
+          alt=""
+        />
+      </center>
+    </div>
+  </div>
+  <div>
+    <h1 class="text-center text-3xl font-bold mt-10">Start Course below</h1>
+  </div>
+  <center>
+    <div class="mt-10">{% video article.url %}</div>
+  </center>
+</div>
+
+{% endblock %}
 <div class="text-center mt-10">
   <div><h1>{{ article.title }}</h1></div>
-  <div><p>{{ article.description }}</p></div>
-  <div>{% video article.url %}</div>
+  <div><p>{{ article.snippet }}</p></div>
 </div>
-{% endblock %}
