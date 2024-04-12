@@ -10,109 +10,24 @@
     <title>Home || Learn Buddy</title>
     <link
       rel="stylesheet"
-      href="{% static 'output.css' %}"
+      href="{% static 'styles.css' %}"
     />
-    <style>
-      .navbar {
-        height: 20px;
-      }
-
-      .form-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .form-container input,
-      .form-container button {
-        background-color: white;
-        color: black;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
-
-      .form-container label {
-        color: white;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      .card {
-        background-color: #404040;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 0 10px;
-        border-radius: 5px;
-        margin: 0 50px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card-image {
-        width: 100%;
-        height: 200px; /* Adjust height as needed */
-        background-color: #ddd; /* Placeholder color for image area */
-      }
-      .img-size {
-        height: 200px;
-        width: 400px;
-      }
-      .card-content {
-        padding: 15px;
-        flex-grow: 1; /* Allows content area to fill remaining space */
-      }
-      .card-content p {
-        margin-top: 20px;
-      }
-      .card-actions {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-      }
-
-      .card-actions a,
-      .card-actions button {
-        text-decoration: none;
-        padding: 5px 10px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-      footer {
-        text-align: center;
-      }
-    </style>
   </head>
-  <body style="background-color: black; color: white">
+  <body>
     <!-- navbar and hero section -->
-    <div
-      style="
-        background-image: url('/static/image.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 790px;
-      "
-    >
-      <nav class="text-xl navbar">
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-content: baseline;
-          "
-        >
-          <div style="display: flex; margin-top: 10px">
-            <a
-              class="ml-4 font-bold text-3xl text-blue-600 mt-3"
-              href="{% url 'home:home' %}"
-              >LearnBuddy</a
-            >
+    <div>
+      <nav>
+        <div class="navbar">
+          <div class="logo">
+            <a href="{% url 'home:home' %}">LearnBuddy</a>
           </div>
-          <div class="flex text-xl gap-4 mt-5 text-white">
+          <div class="menu">
             <a href="{% url 'articles:list' %}">Courses</a>
             <a href="{% url 'home:contact'%}">Contact</a>
             <a href="{% url 'home:about' %}">About</a>
-            {% if user.is_authenticated %}
+          </div>
+          {% if user.is_authenticated %}
+          <div class="account">
             <div>
               <form
                 action="{% url 'accounts:logout' %}"
@@ -120,38 +35,27 @@
               >
                 {% csrf_token %}
                 <button
-                  class="lowercase font-bold rounded text-white hover:bg-blue-600 hover:text-white"
-                  style="
-                    padding: 5px 15px;
-                    margin-right: 15px;
-                    margin-top: -10px;
-                    border: 2px solid;
-                  "
+                  class="login"
                   type="submit"
                 >
                   Sign out
                 </button>
               </form>
+              {% else %}
+              <div>
+                <a
+                  class="login"
+                  href="{% url 'accounts:login' %}"
+                  >sign in</a
+                >
+              </div>
+              {% endif %}
             </div>
-            {% else %}
-            <div>
-              <a
-                class="lowercase font-bold rounded text-white hover:bg-blue-600 hover:text-white"
-                style="
-                  padding: 5px 15px;
-                  margin-right: 15px;
-                  margin-top: -10px;
-                  border: 2px solid;
-                "
-                href="{% url 'accounts:login' %}"
-                >sign in</a
-              >
-            </div>
-            {% endif %}
           </div>
         </div>
+        <hr />
       </nav>
-      <div class="mt-10">
+      <div>
         <div>{% block signup %}{% endblock %}</div>
         <div>{% block login %}{% endblock %}</div>
         <div>{% block Hero %} {% endblock %}</div>

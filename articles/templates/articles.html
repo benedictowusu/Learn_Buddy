@@ -39,7 +39,7 @@
       </form>
     </div>
   </div>
-  <div class="mt-10 grid grid-cols-3 gap-4">
+  <div class="course">
     {% for article in articles %}
     <a href="{% url 'articles:detail' slug=article.slug %}">
       <div class="card">

@@ -1,151 +1,146 @@
 {% extends 'base.html' %} {% block Hero %}
-<div
-  class="pt-20 pl-10 text-white"
-  style="display: flex; justify-content: space-between"
->
-  <div style="font-family: Tahoma, Verdana, sans-serif">
-    <h1 class="text-3xl font-bold mt-10">
-      Become a Highly Sought-After <br />
-      Software Engineer
-    </h1>
-    <h2 class="mt-10 font-bold text-xl">
-      Learn the in-demand skills needed to land your <br />
-      dream job in the software industry
-    </h2>
-    <button class="mt-10 bg-blue-600 font-bold p-4 rounded-full">
-      <a href="{% url 'accounts:signup' %}">Get started (free)</a>
-    </button>
-  </div>
-  <div
-    class="mt-10"
-    style="margin-right: 30px"
-  >
-    <img
-      src="/static/giphy.gif"
-      alt=""
-    />
-  </div>
-</div>
-<div
-  class="text-white pb-20 font-bold"
-  style="margin-top: 8%"
->
-  <h1 class="text-blue-600 ml-10 text-center">Hello,</h1>
-  <p class="text-3xl text-center">Welcome to Learn Buddy</p>
-</div>
-<div
-  class="text-white text-center font-bold"
-  style="background-color: black; font-size: 20px"
->
-  <p>
-    Welcome to the software engineering course! <br />
-    We're excited to guide you on your journey to becoming a skilled developer.
-    Whether <br />
-    you're a complete beginner or have some coding experience, this course is
-    designed to equip <br />
-    you with the knowledge and tools you need to build exceptional software.
-  </p>
-</div>
-<div class="pt-20 grid grid-cols-2 gap-4">
-  <div class="text-center ml-20">
-    <h1 class="text-3xl font-bold">Frontend Development</h1>
-    <p>
-      Front-end developers translate design mockups into functional code using
-      HTML, CSS, and JavaScript. <br />
-      They determine the layout, styling, and overall visual appeal of the
-      website or applicatio
-    </p>
-    <video
-      autoplay
-      muted
-      style="
-        height: 310px;
-        width: 500px;
-        padding-top: 20px;
-        margin-top: 10px;
-        margin-left: 100px;
-      "
-      src="/static/frontend.mp4"
+<div class="homepage">
+  <div class="hero1">
+    <div
+      class="intro"
+      style="font-family: Tahoma, Verdana, sans-serif"
     >
-      Your browser does not support the video
-    </video>
+      <h1 style="font-size: 40px">
+        Become a Highly Sought-After <br />
+        Software Engineer
+      </h1>
+      <p>
+        Learn the in-demand skills needed to land your <br />
+        dream job in the software industry
+      </p>
+      <a
+        class="getstarted"
+        href="{% url 'accounts:signup' %}"
+        >Get started (free)</a
+      >
+    </div>
+    <div>
+      <img
+        style="margin-top: 30px"
+        src="/static/giphy.gif"
+        alt=""
+      />
+    </div>
   </div>
-  <div class="text-center">
-    <h1 class="text-3xl font-bold">Backend Development</h1>
+  <div class="greeting">
+    <h1>Hello,</h1>
+    <p>Welcome to Learn Buddy</p>
+  </div>
+  <div class="greeting">
     <p>
-      Backend developers are responsible for creating the core functionalities
-      that make websites and apps work. They write code that handles things like
-      data storage and retrieval, user authentication, server communication, and
-      application logic.
+      Welcome to the software engineering course! <br />
+      We're excited to guide you on your journey to becoming a skilled
+      developer. Whether <br />
+      you're a complete beginner or have some coding experience, this course is
+      designed to equip <br />
+      you with the knowledge and tools you need to build exceptional software.
     </p>
   </div>
-</div>
-<div class="pt-20">
-  <h1 class="text-center text-3xl font-bold">Why choose us?</h1>
-  <div class="flex flex-row justify-evenly mt-10">
+  <div class="special">
     <div>
-      <h1 class="text-center text-3xl font-bold pt-20">
-        Structured Learning & Expert Guidance
-      </h1>
-      <p class="text-center mt-6">
-        We offer a structured curriculum designed to take you from beginner to
-        proficient coder. <br />
-        Our experienced instructors provide clear explanations, practical
-        exercises, <br />
-        and ongoing support to ensure you grasp key concepts and build your
-        skills effectively.
+      <h1>Frontend Development</h1>
+      <p>
+        Front-end developers translate design mockups into functional code using
+        HTML, CSS, and JavaScript. <br />
+        They determine the layout, styling, and overall visual appeal of the
+        website or applicatio
       </p>
+      <video
+        autoplay
+        muted
+        style="
+          height: 310px;
+          width: 500px;
+          padding-top: 20px;
+          margin-top: 10px;
+          margin-left: 100px;
+        "
+        src="/static/frontend.mp4"
+      >
+        Your browser does not support the video
+      </video>
     </div>
     <div>
-      <img
-        style="height: 310px"
-        src="/static/code 1.webp"
-        alt=""
-      />
+      <h1>Backend Development</h1>
+      <p>
+        Backend developers are responsible for creating the core functionalities
+        that make websites and apps work. They write code that handles things
+        like data storage and retrieval, user authentication, server
+        communication, and application logic.
+      </p>
     </div>
   </div>
-  <div class="flex flex-row justify-evenly mt-10">
+  <div>
+    <h1 class="reason">Why choose us?</h1>
     <div>
-      <h1 class="text-center text-3xl font-bold pt-20">
-        Engaging & Practical Approach
-      </h1>
-      <p class="text-center mt-6">
-        Learning by doing is our motto. We go beyond theory, offering
-        interactive coding exercises, <br />
-        real-world project opportunities, and a collaborative learning
-        environment. You'll gain hands-on <br />
-        experience by building your own software applications, making the
-        learning process engaging and relevant.
-      </p>
-    </div>
-    <div>
-      <img
-        style="height: 310px"
-        src="/static/code 2.webp"
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="flex flex-row justify-evenly mt-10">
-    <div>
-      <h1 class="text-center text-3xl font-bold pt-20">
-        Empowering You for Success
-      </h1>
-      <p class="text-center mt-6">
-        Our goal is not just to teach you to code, but to empower you for a
-        successful career in software engineering. <br />
-        We offer career guidance, help you build a strong portfolio to showcase
-        <br />
-        your skills, and prepare you for the challenges and opportunities that
-        lie ahead in the tech industry
-      </p>
-    </div>
-    <div>
-      <img
-        style="height: 310px"
-        src="/static/code 3.webp"
-        alt=""
-      />
+      <div class="reasons">
+        <div>
+          <h1>Structured Learning & Expert Guidance</h1>
+          <p>
+            We offer a structured curriculum designed to take you from beginner
+            to proficient coder. <br />
+            Our experienced instructors provide clear explanations, practical
+            exercises, <br />
+            and ongoing support to ensure you grasp key concepts and build your
+            skills effectively.
+          </p>
+        </div>
+        <div>
+          <img
+            style="height: 310px"
+            src="/static/code 1.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="reasons">
+        <div>
+          <h1>Engaging & Practical Approach</h1>
+          <p>
+            Learning by doing is our motto. We go beyond theory, offering
+            interactive coding exercises, <br />
+            real-world project opportunities, and a collaborative learning
+            environment. You'll gain hands-on <br />
+            experience by building your own software applications, making the
+            learning process engaging and relevant.
+          </p>
+        </div>
+        <div>
+          <img
+            style="height: 310px"
+            src="/static/code 2.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="reasons">
+        <div>
+          <h1>Empowering You for Success</h1>
+          <p>
+            Our goal is not just to teach you to code, but to empower you for a
+            successful career in software engineering. <br />
+            We offer career guidance, help you build a strong portfolio to
+            showcase
+            <br />
+            your skills, and prepare you for the challenges and opportunities
+            that lie ahead in the tech industry
+          </p>
+        </div>
+        <div>
+          <img
+            style="height: 310px"
+            src="/static/code 3.webp"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
