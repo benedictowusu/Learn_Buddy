@@ -1,48 +1,88 @@
 {% extends 'base.html' %}{% block about %}
-<center>
-  <main>
-    <h2>Unlock Your Software Engineering Potential</h2>
-    <p>
-      Welcome to our comprehensive software engineering course, designed to
-      equip you with the skills and knowledge to thrive in this exciting field.
-      Whether you're a complete beginner or have some programming experience,
-      our program caters to all levels.
-    </p>
-    <section class="about-sections">
+<div>
+  <center><h1>About LearnBuddy</h1></center>
+  <p>
+    LearningBuddy was born out of our struggle as software engineering students.
+    During our journey, we often found ourselves overwhelmed by the vast amount
+    of resources available online. <br />
+    It was challenging to navigate through the clutter and find high-quality
+    materials that truly helped us grasp the concepts. <br />
+    As we searched for a solution to streamline our learning process, the idea
+    for "LearningBuddy" began to take shape. We envisioned a platform that would
+    serve as a one-stop destination for software engineering students like
+    ourselves, <br />
+    providing curated educational resources tailored to our specific needs.
+    Drawing from our own experiences and frustrations, we set out to create
+    "LearningBuddy" with the goal of simplifying the learning experience for
+    others in the field. <br />
+    We wanted to build a platform that not only offered comprehensive courses
+    but also fostered a sense of community among learners in Ghana. <br />
+    With "LearningBuddy", we aim to empower students to take control of their
+    learning journey, offering them the support and resources they need to
+    succeed in the dynamic field of software engineering. <br />
+    It's a project inspired by our own struggles and fueled by the desire to
+    make learning more accessible and enjoyable for everyone.
+  </p>
+</div>
+<div>
+  <center><h1>Our Team</h1></center>
+  <center><p>Meet the brilliant minds behind this project!</p></center>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px">
+    <div class="team-member">
+      <img
+        style="height: 100px"
+        src="/static/beney.jpg"
+        alt="Team Member 1"
+      />
+      <h2>Benedict Owusu</h2>
+      <p>Backend Developer</p>
+      <p>
+        Benedict is a passionate backend developer with a knack for building
+        secure and scalable web applications. He thrives on tackling complex
+        data challenges and enjoys writing clean, well-documented code. In this
+        project, Benedict was instrumental in developing the robust APIs that
+        power the application's core functionality.
+      </p>
       <div>
-        <h3>Master the Fundamentals</h3>
-        <p>
-          Learn the essential building blocks of software development, including
-          programming languages, algorithms, data structures, and software
-          design principles.
-        </p>
+        <center><h1>Contact</h1></center>
+        <li><a href="https://github.com/benedictowusu">Github</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/benedict-owusu/">Linkedin</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/benedictowusu_">X (Formally Twitter)</a>
+        </li>
       </div>
+    </div>
+    <div class="team-member">
+      <img
+        style="height: 110px"
+        src="/static/albert.jpg"
+        alt="Team Member 2"
+      />
+      <h2>Albert Opoku-Twumasi</h2>
+      <p>Frontend Developer</p>
+      <p>
+        Albert is a talented frontend developer with a passion for creating
+        user-friendly and visually appealing web experiences. He brings his
+        expertise in HTML, CSS, and JavaScript to the table, ensuring the
+        project's functionality and interactivity
+      </p>
       <div>
-        <h3>Hands-on Learning</h3>
-        <p>
-          Get practical experience through real-world coding projects and
-          exercises. Apply your theoretical knowledge to solve problems and
-          build your portfolio.
-        </p>
+        <center><h1>Contact</h1></center>
+        <li><a href="https://github.com/orocket">Github</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/albert-opoku-twumasi-a4694b280"
+            >Linkedin</a
+          >
+        </li>
+        <li>
+          <a href="https://x.com/Albert_O_T?t=rxuTyLE3ssU-2HTgfozXkQ&s=08"
+            >X (Formally Twitter)</a
+          >
+        </li>
       </div>
-      <div>
-        <h3>Expert Instructors</h3>
-        <p>
-          Our experienced instructors are passionate about software engineering
-          and committed to your success. They provide personalized guidance and
-          mentorship throughout the course.
-        </p>
-      </div>
-    </section>
-    <p>By the end of this course, you'll be able to:</p>
-    <ul>
-      <li>Write clean and efficient code.</li>
-      <li>Design and develop software applications.</li>
-      <li>Troubleshoot and debug software issues.</li>
-      <li>Collaborate effectively in a team environment.</li>
-      <li>Prepare for a career in software engineering.</li>
-    </ul>
-    <a href="{% url 'accounts:signup' %}">Enroll Now!</a>
-  </main>
-</center>
+    </div>
+  </div>
+</div>
 {% endblock %}
