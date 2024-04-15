@@ -17,16 +17,16 @@ Backend:
 Python (Django)
 
 ## Prerequisites
-Before running the app, ensure you have Python 3.x installed on your system. You'll also need to install the required dependencies listed in requirements.txt.
-pip install -r requirements.txt
+Before running the app, ensure you have Python 3. x installed on your system. You'll also need to install **Django** globally on your local machine
+`pip install Django`
 
 ## Installation
 Clone the repository to your local machine.
+`git clone github.com/benedictowusu/Learn_Buddy.git`
 Navigate to the project directory.
-Install dependencies as mentioned above.
 
 Run the app using the command:
-py manage.py runserver
+`py manage.py runserver`  
 
 ## Usage
 Sign up for a new account or log in with existing credentials.
