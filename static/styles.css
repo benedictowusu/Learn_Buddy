@@ -116,6 +116,7 @@ body {
   color: white;
   text-decoration: none;
   margin: 40px;
+  text-decoration: none;
 }
 
 .card-image {
@@ -129,7 +130,7 @@ body {
 }
 .card-content {
   padding: 15px;
-  flex-grow: 1; /* Allows content area to fill remaining space */
+  flex-grow: 1;
 }
 .card-content p {
   margin-top: 20px;

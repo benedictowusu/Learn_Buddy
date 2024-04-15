@@ -1,18 +1,16 @@
 {% extends 'base.html' %} {% load embed_video_tags %} {% block content %}
 
-<div style="padding: 10px">
-  <h1 class="text-3xl font-bold text-center">
-    Welcome to the best {{article.title }} course
-  </h1>
-  <div class="flex">
-    <div class="mt-10">
+<div>
+  <h1>Welcome to the best {{article.title }} course</h1>
+  <div>
+    <div>
       <p>
-        Dear {{ user }}, Our <b>{{ article.title }}</b> course is tailored just for
-        you.
+        Dear {{ user }}, Our <b>{{ article.title }}</b> course is tailored just
+        for you.
         <br />
         These are some things you will learn from our course
       </p>
-      <ul class="mt-10">
+      <ul>
         <li>
           1. Write clean, efficient, and maintainable {{ article.title }} code.
         </li>
@@ -27,12 +25,12 @@
           software engineering.
         </li>
       </ul>
-      <p class="mt-10">
+      <p>
         Don't wait! Invest in your future and take the first step towards a
         rewarding career in software engineering
       </p>
     </div>
-    <div style="margin-top: 4%">
+    <div>
       <center>
         <img
           class="img-size"
@@ -43,15 +41,15 @@
     </div>
   </div>
   <div>
-    <h1 class="text-center text-3xl font-bold mt-10">Start Course below</h1>
+    <h1>Start Course below</h1>
   </div>
   <center>
-    <div class="mt-10">{% video article.url %}</div>
+    <div>{% video article.url %}</div>
   </center>
 </div>
 
 {% endblock %}
-<div class="text-center mt-10">
+<div>
   <div><h1>{{ article.title }}</h1></div>
   <div><p>{{ article.snippet }}</p></div>
 </div>
